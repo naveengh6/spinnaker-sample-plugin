@@ -62,7 +62,7 @@ class RandomWaitStage(val configuration: RandomWaitConfig) : SimpleStage<RandomW
         }
 
         val stageOutput = SimpleStageOutput<Output, Context>()
-        val output = Output(timeToWait)
+        val output = Output(timeToWait, "This is sameple message to tell about spinnaker plugin")
         val context = Context(maxWaitTime)
 
         stageOutput.setOutput(output)
