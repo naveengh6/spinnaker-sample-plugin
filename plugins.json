@@ -8,7 +8,6 @@
         "version": "1.1.15",
         "date": "2020-07-30T16:03:00.200Z",
         "requires": "orca>=0.0.0,deck>=0.0.0",
-        "sha512sum": "f19deb40c2f386f1334a4ec6bf41bbb58296e489c37abcb80c93a5e423f2fb3522b45e8f9e5c7a188017c125b90bb0aea323e80f281fa1619a0ce769617e020e",
         "state": "",
         "url": "https://github.com/naveengh6/spinnaker-sample-plugin/raw/master/spinnaker-sample-plugin.zip"
       }
