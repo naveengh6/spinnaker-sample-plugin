@@ -16,7 +16,7 @@ class RandomWaitStageTest : JUnit5Minutests {
                     .isEqualTo(
                             SimpleStageOutput<Output, Context>().apply {
                                 status = SimpleStageStatus.SUCCEEDED
-                                output = Output(0)
+                                output = Output(0, "This is sameple message to tell about spinnaker plugin")
                                 context = Context(1)
                             }
                     )
