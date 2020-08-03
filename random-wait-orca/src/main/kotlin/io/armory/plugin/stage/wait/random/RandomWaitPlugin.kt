@@ -53,6 +53,7 @@ class RandomWaitStage(val configuration: RandomWaitConfig) : SimpleStage<RandomW
     override fun execute(stageInput: SimpleStageInput<RandomWaitInput>): SimpleStageOutput<*, *> {
         val rand = Random()
         val maxWaitTime = stageInput.value.maxWaitTime
+        var outputMessage = stageInput.value.outputMessage
         val timeToWait = rand.nextInt(maxWaitTime)
 
         try {
@@ -62,7 +63,7 @@ class RandomWaitStage(val configuration: RandomWaitConfig) : SimpleStage<RandomW
         }
 
         val stageOutput = SimpleStageOutput<Output, Context>()
-        val output = Output(timeToWait, "This is sameple message to tell about spinnaker plugin")
+        val output = Output(timeToWait, outputMessage)
         val context = Context(maxWaitTime)
 
         stageOutput.setOutput(output)
