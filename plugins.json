@@ -5,11 +5,11 @@
     "provider": "https://github.com/spinnaker-plugin-examples",
     "releases": [
       {
-        "version": "1.1.4",
-        "date": "2020-04-27T20:19:52.224Z",
+        "version": "1.1.5",
+        "date": "2020-08-03T11:19:52.224Z",
         "requires": "orca>=0.0.0,deck>=0.0.0",
         "state": "",
-        "url": "https://github.com/naveengh6/spinnaker-sample-plugin/raw/master/spinnaker-sample-plugin.zip"
+        "url": "https://github.com/naveengh6/spinnaker-sample-plugin/raw/master/pf4jStagePlugin-afe134e.dirty-SNAPSHOT.zip"
       }
     ]
   }
