@@ -10,6 +10,8 @@ import org.pf4j.Plugin
 import org.pf4j.PluginWrapper
 import java.util.concurrent.TimeUnit
 import java.util.*
+//import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+//import org.springframework.web.client.RestTemplate
 
 
 class RandomWaitPlugin(wrapper: PluginWrapper) : Plugin(wrapper) {
@@ -62,7 +64,10 @@ class RandomWaitStage(val configuration: RandomWaitConfig) : SimpleStage<RandomW
             log.error("{}", e)
         }
 
+//        val quote = RestTemplate().getForObject("http://gturnquist-quoters.cfapps.io/api/random", Quote::class.java)
+
         val stageOutput = SimpleStageOutput<Output, Context>()
+//        val output = Output(timeToWait, outputMessage + ": " + quote.value?.quote)
         val output = Output(timeToWait, outputMessage)
         val context = Context(maxWaitTime)
 
@@ -73,3 +78,9 @@ class RandomWaitStage(val configuration: RandomWaitConfig) : SimpleStage<RandomW
         return stageOutput
     }
 }
+
+//@JsonIgnoreProperties(ignoreUnknown = true)
+//data class Value(var id: Long = 0, var quote: String = "")
+//
+//@JsonIgnoreProperties(ignoreUnknown = true)
+//data class Quote(var type : String = "", var value : Value? = null)

@@ -2,15 +2,22 @@ buildscript {
   repositories {
     mavenCentral()
   }
+  dependencies {
+//    classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.1.RELEASE")
+  }
 }
 
 apply plugin: "io.spinnaker.plugin.service-extension"
 apply plugin: "maven-publish"
 apply plugin: "kotlin"
 apply plugin: "kotlin-kapt"
+//apply plugin: 'org.springframework.boot'
+//apply plugin: 'io.spring.dependency-management'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
+//configurations.implementation.canBeResolved = true
 
 repositories {
   mavenCentral()
@@ -29,6 +36,9 @@ dependencies {
   compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
   compileOnly (group: 'com.netflix.spinnaker.kork', name: 'kork-plugins-api', version: "${korkVersion}")
   compileOnly (group: 'com.netflix.spinnaker.orca', name: 'orca-api', version: "${orcaVersion}")
+//  compile("org.springframework.boot:spring-boot-starter")
+//  compile("org.springframework:spring-web")
+//  compile("com.fasterxml.jackson.core:jackson-databind")
 
   kapt(group: 'org.pf4j', name: 'pf4j', version: "${pf4jVersion}")
 
