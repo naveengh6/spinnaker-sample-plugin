@@ -24,6 +24,10 @@
         "requires": "orca>=0.0.0,deck>=0.0.0",
         "state": "",
         "url": "https://github.com/naveengh6/spinnaker-sample-plugin/raw/master/pf4jStagePlugin-24bf303.dirty-SNAPSHOT.zip"
+      },
+      {
+        "version": "1.1.7",
+        "url": "https://github.com/naveengh6/spinnaker-sample-plugin/raw/master/pf4jStagePlugin-daf3305.dirty-SNAPSHOT.zip"
       }
     ]
   }

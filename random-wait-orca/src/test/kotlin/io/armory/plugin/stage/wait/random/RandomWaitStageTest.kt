@@ -12,11 +12,11 @@ class RandomWaitStageTest : JUnit5Minutests {
 
     fun tests() = rootContext {
         test("execute random wait stage") {
-            expectThat(RandomWaitStage(RandomWaitConfig(30)).execute(SimpleStageInput(RandomWaitInput(1, "This is sameple message to tell about spinnaker plugin"))))
+            expectThat(RandomWaitStage(RandomWaitConfig(30)).execute(SimpleStageInput(RandomWaitInput(1, 10))))
                     .isEqualTo(
                             SimpleStageOutput<Output, Context>().apply {
                                 status = SimpleStageStatus.SUCCEEDED
-                                output = Output(0, "This is sameple message to tell about spinnaker plugin")
+                                output = Output(0, 10)
                                 context = Context(1)
                             }
                     )

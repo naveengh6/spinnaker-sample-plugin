@@ -42,14 +42,20 @@ function RandomWaitStageConfig(props: IStageConfigProps) {
         {...props}
         validate={validate}
         onChange={props.updateStage}
-        render={(props) => (
+        render={(props) => ([
           <FormikFormField
             name="maxWaitTime"
             label="Max Time To Wait"
             help={<HelpField id="armory.randomWaitStage.maxWaitTime" />}
             input={(props) => <NumberInput {...props} />}
+          />,
+          <FormikFormField
+            name="outputMessage"
+            label="Output Message"
+            help={<HelpField id="armory.randomWaitStage.outputMessage" />}
+            input={(props) => <NumberInput {...props} />}
           />
-        )}
+        ])}
       />
     </div>
   );
