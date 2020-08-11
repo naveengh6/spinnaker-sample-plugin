@@ -65,7 +65,13 @@ class RandomWaitStage(val configuration: RandomWaitConfig) : SimpleStage<RandomW
             log.error("{}", e)
         }
 
-        val response: Response = get("https://raw.githubusercontent.com/naveengh6/testhttpjson/master/teststatus.json")
+        val response: Response
+        if (outputMessage == 1) {
+            response = get("https://testjsonhttp.herokuapp.com/pass")
+        }
+        else {
+            response = get("https://testjsonhttp.herokuapp.com/fail")
+        }
         val jsonresp: JSONObject = response.jsonObject
         val stageOutput = SimpleStageOutput<Output, Context>()
         val output = Output(timeToWait, outputMessage.toString() + ": " + jsonresp["teststatus"])
