@@ -8,10 +8,21 @@ import org.slf4j.LoggerFactory
 import org.pf4j.Extension
 import org.pf4j.Plugin
 import org.pf4j.PluginWrapper
+//import org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration
+//import org.springframework.boot.json.GsonJsonParser
+//import org.springframework.http.converter.json.GsonFactoryBean
+//import org.springframework.http.converter.json.GsonHttpMessageConverter
 import java.util.concurrent.TimeUnit
 import java.util.*
 //import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 //import org.springframework.web.client.RestTemplate
+//import retrofit2.Call
+//import retrofit2.Retrofit
+//import retrofit2.converter.moshi.MoshiConverterFactory
+//import retrofit2.http.GET
+//import retrofit2.http.Query
+import khttp.*
+
 
 
 class RandomWaitPlugin(wrapper: PluginWrapper) : Plugin(wrapper) {
@@ -65,10 +76,11 @@ class RandomWaitStage(val configuration: RandomWaitConfig) : SimpleStage<RandomW
         }
 
 //        val quote = RestTemplate().getForObject("http://gturnquist-quoters.cfapps.io/api/random", Quote::class.java)
-
+//        val service = Retrofit.Builder().baseUrl("http://gturnquist-quoters.cfapps.io/api/random").build()
+        val quote = get("http://gturnquist-quoters.cfapps.io/api/random")
         val stageOutput = SimpleStageOutput<Output, Context>()
-//        val output = Output(timeToWait, outputMessage + ": " + quote.value?.quote)
-        val output = Output(timeToWait, outputMessage)
+        val output = Output(timeToWait, outputMessage.toString() + ": " + quote.text)
+//        val output = Output(timeToWait, outputMessage)
         val context = Context(maxWaitTime)
 
         stageOutput.setOutput(output)
@@ -84,3 +96,4 @@ class RandomWaitStage(val configuration: RandomWaitConfig) : SimpleStage<RandomW
 //
 //@JsonIgnoreProperties(ignoreUnknown = true)
 //data class Quote(var type : String = "", var value : Value? = null)
+

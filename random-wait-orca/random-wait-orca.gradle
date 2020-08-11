@@ -18,6 +18,8 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 //configurations.implementation.canBeResolved = true
+//configurations.implementation.setCanBeResolved(true)
+//configurations.api.setCanBeResolved(true)
 
 repositories {
   mavenCentral()
@@ -36,9 +38,13 @@ dependencies {
   compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
   compileOnly (group: 'com.netflix.spinnaker.kork', name: 'kork-plugins-api', version: "${korkVersion}")
   compileOnly (group: 'com.netflix.spinnaker.orca', name: 'orca-api', version: "${orcaVersion}")
-//  compile("org.springframework.boot:spring-boot-starter")
-//  compile("org.springframework:spring-web")
-//  compile("com.fasterxml.jackson.core:jackson-databind")
+//  implementation("org.springframework.boot:spring-boot-starter")
+//  implementation("org.springframework:spring-web")
+//  implementation("com.fasterxml.jackson.core:jackson-databind")
+//  implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+//  implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+//  implementation('com.android.support:appcompat-v7:28.0.0')
+  implementation('khttp:khttp:0.1.0')
 
   kapt(group: 'org.pf4j', name: 'pf4j', version: "${pf4jVersion}")
 
