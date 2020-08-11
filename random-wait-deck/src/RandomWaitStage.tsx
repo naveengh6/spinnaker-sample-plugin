@@ -74,6 +74,7 @@ function RandomWaitStageConfig(props: IStageConfigProps) {
 */
 export const initialize = () => {
   HelpContentsRegistry.register('armory.randomWaitStage.maxWaitTime', 'The maximum time, in seconds, that this stage should wait before continuing.');
+  HelpContentsRegistry.register('armory.randomWaitStage.outputMessage', 'This is the output message to ber displayed in the log.');
 };
 
 function validate(stageConfig: IStage) {
