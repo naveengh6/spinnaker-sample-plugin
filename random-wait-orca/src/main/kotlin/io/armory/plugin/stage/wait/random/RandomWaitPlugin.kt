@@ -74,7 +74,7 @@ class RandomWaitStage(val configuration: RandomWaitConfig) : SimpleStage<RandomW
 
         stageOutput.setOutput(output)
         stageOutput.setContext(context)
-        if(jsonresp["teststatus"] == "SUUCESS") {
+        if(jsonresp["teststatus"] == "SUCCESS") {
             stageOutput.setStatus(SimpleStageStatus.SUCCEEDED)
         } else {
             stageOutput.setStatus(SimpleStageStatus.TERMINAL)
