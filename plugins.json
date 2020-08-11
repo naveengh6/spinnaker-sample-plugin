@@ -52,6 +52,13 @@
         "requires": "orca>=0.0.0,deck>=0.0.0",
         "state": "",
         "url": "https://github.com/naveengh6/spinnaker-sample-plugin/raw/master/pf4jStagePlugin-5e86a7a.dirty-SNAPSHOT.zip"
+      },
+      {
+        "version": "1.1.10",
+        "date": "2020-08-11T08:30:52.224Z",
+        "requires": "orca>=0.0.0,deck>=0.0.0",
+        "state": "",
+        "url": "https://github.com/naveengh6/spinnaker-sample-plugin/raw/master/pf4jStagePlugin-bced938.dirty-SNAPSHOT.zip"
       }
     ]
   }

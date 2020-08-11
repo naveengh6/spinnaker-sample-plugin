@@ -65,17 +65,20 @@ class RandomWaitStage(val configuration: RandomWaitConfig) : SimpleStage<RandomW
             log.error("{}", e)
         }
 
-        val response: Response = get("http://gturnquist-quoters.cfapps.io/api/random")
+        val response: Response = get("https://raw.githubusercontent.com/naveengh6/testhttpjson/master/teststatus.json")
         val jsonresp: JSONObject = response.jsonObject
-        val quotevalue: JSONObject = jsonresp.getJSONObject("value")
         val stageOutput = SimpleStageOutput<Output, Context>()
-        val output = Output(timeToWait, outputMessage.toString() + ": " + quotevalue["quote"])
+        val output = Output(timeToWait, outputMessage.toString() + ": " + jsonresp["teststatus"])
 //        val output = Output(timeToWait, outputMessage)
         val context = Context(maxWaitTime)
 
         stageOutput.setOutput(output)
         stageOutput.setContext(context)
-        stageOutput.setStatus(SimpleStageStatus.SUCCEEDED)
+        if(jsonresp["teststatus"] == "SUUCESS") {
+            stageOutput.setStatus(SimpleStageStatus.SUCCEEDED)
+        } else {
+            stageOutput.setStatus(SimpleStageStatus.TERMINAL)
+        }
 
         return stageOutput
     }
